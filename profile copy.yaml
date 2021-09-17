@@ -1,0 +1,15 @@
+apiVersion: weave.works/v1alpha1
+kind: ProfileDefinition
+metadata:
+  name: nginx
+spec:
+  description: A profile which deploys an nginx server
+  artifacts:
+    - name: bitnami-nginx
+      chart:
+        url: https://charts.bitnami.com/bitnami
+        name: nginx
+        version: "8.9.1"
+        defaultValues: |
+          service:
+            type: ClusterIP
